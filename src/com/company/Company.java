@@ -24,9 +24,9 @@ public class Company {
         Applicant applicant = new Applicant();
         CEO ceo = new CEO();
         Company company = new Company();
-        //System.out.println(company.companyAddress);
+        Accountant accountant = new Accountant();
         Staff staff = new Staff();
-        String name,discipline;
+        /*String name,discipline;
         int age,yrsOfExp;
         Scanner sc;
         HashMap<String, ArrayList<String>> tl;
@@ -40,10 +40,17 @@ public class Company {
         System.out.println("Enter Discipline: ");
         discipline = sc.next();
         tl = new HashMap<>();
-        tl.put("ST-1234",applicant.apply(name,age,yrsOfExp,discipline,company.companyName,company.companyAddress));
-        //System.out.println(ceo.fire("ST-1234",tl));
-        //System.out.println(ceo.viewStaffProfile("ST-1234"));
-         System.out.println(applicant.apply(name,age,yrsOfExp,discipline,company.companyName,company.companyAddress));
+        tl.put("ST-1234",applicant.apply(name,age,yrsOfExp,discipline,company.companyName,company.companyAddress));*/
+        //System.out.println(applicant.apply(name,age,yrsOfExp,discipline,company.companyName,company.companyAddress));
+        ArrayList<String> profile = new ArrayList<>();
+        profile.add("Shadrach Adamu");
+        profile.add("23");
+        profile.add("27");
+        profile.add("Computer Science");
+        profile.add("True");
+        profile.add("Seniour");
+        profile.add("0.00D");
+        System.out.println(accountant.paySalary("ST-1234",50000D,"For the Month of June",profile));
     }
     public ArrayList<String> getCompanyInfo(){
         ArrayList<String> dataArr = new ArrayList<>();

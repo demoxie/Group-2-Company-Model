@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CEO extends Staff{
-
+String designation;
+public CEO (){
+    this.designation = "CEO";
+}
     public String hire(boolean empStat,String rank, int attendance,double salary, ArrayList<String> applicantData){
         //ArrayList<String> appData = new ArrayList<>();
         String status = "";
@@ -31,7 +34,7 @@ public class CEO extends Staff{
         }
         return "Unfortunately your appointment has been terminated with us";
     }
-    protected ArrayList<String> paySalary(String staffID, double amount, String forTheMonthOf,ArrayList<String> list){
+    protected ArrayList<String> paySalary(String staffID, double amount, String forTheMonthOf, ArrayList<String> list){
         Staff staff = new Staff(staffID,list);
         LocalDateTime dateObject = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
@@ -40,11 +43,11 @@ public class CEO extends Staff{
         list.set(6,Double.toString(amount));
         list.add(forTheMonthOf);
         list.add(datePaid);
-        return staff.getStaffProfile(staffID);
+        return list;
     }
-    protected ArrayList<String> viewStaffProfile(String staffID){
-        Staff staffObj = new Staff();
-        return staffObj.getStaffProfile(staffID);
+    protected ArrayList<String> viewStaffProfile(String staffID, ArrayList<String> profile){
+        Staff staffObj = new Staff(staffID,profile);
+        return profile;
     }
     protected ArrayList<String> promote(String staffID){
         Staff staffObject = new Staff();

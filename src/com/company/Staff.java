@@ -65,8 +65,12 @@ public class Staff extends Company{
     protected HashMap<String, ArrayList<String>> getListOfStaffs(){
         return this.listOfStaffs;
     }
-    public String requestForRaise(){
-        return "Request accepted";
+    public String requestForRaise(double salary,double workRate, double expectedSalary){
+        String message = "";
+        if(salary<expectedSalary && workRate>=70.00D){
+            message = "I am placing request for raise";
+        }
+        return message;
     }
     public String markAttendance(String staffID,boolean presence){
         if(presence){
