@@ -7,10 +7,11 @@ public class Staff extends Company{
     private String staffRank;
     protected HashMap<String, ArrayList<String>> listOfStaffs = new HashMap<>();
     public Staff(){
+        this.listOfStaffs = null;
     }
-    public Staff(String staffID, ArrayList<String> list){
-        this.listOfStaffs.put(staffID,list);
-    }
+   /* public Staff(HashMap<String,ArrayList<String>> list){
+        this.listOfStaffs.add(list);
+    }*/
 
     public Staff(String name, String staffID, String s, String s1, String discipline, boolean empStat, String rank, int attendance, double salary) {
         int age = Integer.parseInt(s);
@@ -29,24 +30,8 @@ public class Staff extends Company{
         this.listOfStaffs.put(staffID,profile);
     }
 
-
-    protected boolean setStaffProfile(ArrayList<String> data){
-        this.employmentStatus = true;
-        this.staffRank = "Senior";
-        ArrayList<String> profile = new ArrayList<>();
-        profile.add(data.get(0));
-        profile.add(data.get(1));
-        profile.add(data.get(2));
-        profile.add(data.get(3));
-        profile.add(Boolean.toString(true));
-        profile.add(this.staffRank);
-        double salary = 0.00D;
-        profile.add(Double.toString(salary));
-        this.listOfStaffs.put("ST-263738",profile);
-        return true;
-    }
     public ArrayList<String> getStaffProfile(String staffID){
-        return listOfStaffs.get(staffID);
+        return listOfStaffs.get(Integer.parseInt(staffID));
     }
     protected boolean updateStaffEmploymentStatus(boolean status){
         this.employmentStatus = status;
@@ -77,6 +62,6 @@ public class Staff extends Company{
             ArrayList<String> profile = this.listOfStaffs.get(staffID);
             profile.set(4,profile.get(4));
         }
-        return "Request accepted";
+        return "ok";
     }
 }
