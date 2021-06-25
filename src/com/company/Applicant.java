@@ -16,6 +16,8 @@ public class Applicant {
         application.add(Integer.toString(age));
         application.add(Integer.toString(yearsOfExperience));
         application.add(discipline);
+        Company company = new Company();
+        System.out.println(company.listOfStaffs);
         return application;
     }
 

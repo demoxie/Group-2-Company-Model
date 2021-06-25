@@ -1,38 +1,29 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
 
 public class Company {
     public String companyName;
     public String companyAddress;
-    protected HashMap<String, ArrayList<String>> listOfStaffs = new HashMap<>();
-
-    /*public Company(String name, String address) {
-        this.companyName = name;
-        this.companyAddress = address;
-    }*/
-    Company(){
+    protected ArrayList<Staff> listOfStaffs;
+    public Company(){
         this.companyName = "Decagon";
         this.companyAddress = "Edo State";
-        this.listOfStaffs = null;
-
+    }
+    protected Company(Staff staffProfile){
+        this.listOfStaffs.add(staffProfile);
     }
     @Override
     public String toString() {
         return "Company{" +
                 "companyName='" + companyName + '\'' +
                 ", companyAddress='" + companyAddress + '\'' +
-                ", listOfStaffs=" + listOfStaffs +
                 '}';
     }
 
     public static void main(String[] args) {
 	// write your code here
-        Applicant applicant = new Applicant();
-        CEO ceo = new CEO();
-        Company company = new Company();
+
        /* Accountant accountant = new Accountant();
         Staff staff = new Staff();
         String name,discipline;
@@ -60,13 +51,11 @@ public class Company {
         profile.add("Seniour");
         profile.add("0.00D");
         System.out.println(accountant.paySalary("ST-1234",50000D,"For the Month of June",profile));*/
-        System.out.println(company.listOfStaffs);
+
     }
-    public ArrayList<String> getCompanyInfo(){
-        ArrayList<String> dataArr = new ArrayList<>();
-        dataArr.add(this.companyName);
-        dataArr.add(this.companyAddress);
-        return dataArr;
+    public Company getCompanyInfo(){
+
+        return new Company();
     }
 
 }
