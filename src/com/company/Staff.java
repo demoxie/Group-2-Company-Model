@@ -30,8 +30,6 @@ public class Staff extends Company{
                     }
                 }
 
-
-
         }
         return "Marked";
     }
